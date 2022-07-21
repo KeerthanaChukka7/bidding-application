@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %} {% include 'nav.html' %} {% load static %}
+
+<section class="section">
+    <section class="container">
+        {% if user.is_authenticated == False %}
+        <div class="card z-depth-2">
+            <div class="card-content">
+                <h5>Notice</h5>
+                <p class="custom-font-1">You must have a registered account and be logged in, in order to view and place bids within our marketplace.</p>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="card z-depth-2">
+            <div class="card-content">
+                
+                <h5>Market Place</h5>
+
+                <p class="custom-font-1"></p>
+                <a href="{% url 'app:placements' %}" class="btn waves-effect waves-light pink" style="margin-top: 1rem;">
+                        <i class="material-icons left">store</i>visit marketplace</a>
+                <img class="responsive-img fade-in" src="{% static 'austin-distel-1555609-unsplash.jpg' %}" alt="">
+            </div>
+        </div>
+
+                <img class="responsive-img fade-in" src="{% static 'office-interior836.jpg' %}" alt="">
+            </div>
+        </div>
+
+    </section>
+</section>
+
+{% include 'footer.html' %} {% endblock content %}
